@@ -1,24 +1,21 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { CredtiorGetModel } from "./creditor-get.model";
+import { CreditorService } from "./creditor.service";
 
 @Component({
     selector:'fm-creditorlist',
     templateUrl:'./creditor-list.component.html'
 })
 
-export class CreditorListComponent{ 
+export class CreditorListComponent implements OnInit { 
     pageTitle: string = "Creditor List";
-    creditors: any[] = [
-        {
-            "id":1,
-            "name":"Edp"
-        },
-        {
-            "id":2,
-            "name":"Nos"
-        },
-        {
-            "id":3,
-            "name":"Aguas do Porto"
-        }
-    ];
+    creditors: CredtiorGetModel[] = [];
+
+    constructor(private creditorService: CreditorService)
+    {     
+    }
+
+    ngOnInit(): void {
+      this.creditors = this.creditorService.getCreditor();  
+    }
 }
