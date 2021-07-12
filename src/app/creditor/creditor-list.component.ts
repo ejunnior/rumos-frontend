@@ -16,6 +16,12 @@ export class CreditorListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.creditors = this.creditorService.getCreditor();  
+        this.creditorService
+            .getCreditor()
+            .subscribe( {
+                next: data => this.creditors = data
+            });
+            
+      //this.creditors = this.creditorService.getCreditor();  
     }
 }

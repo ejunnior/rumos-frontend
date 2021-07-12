@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { CredtiorGetModel } from "./creditor-get.model";
 
 @Injectable({
@@ -6,24 +8,14 @@ import { CredtiorGetModel } from "./creditor-get.model";
 })
 
 export class CreditorService {
-    getCreditor() : CredtiorGetModel[] {
-        return [
-            {
-                "id":1,
-                "name":"Edp"
-            },
-            {
-                "id":2,
-                "name":"Nos"
-            },
-            {
-                "id":3,
-                "name":"Aguas do Porto"
-            },
-            {
-                "id":4,
-                "name":"Meo"
-            },
-        ]        
+    
+    private apiUrl = "https://localhost:44384/creditor"
+    
+    constructor(private httpClient: HttpClient) {
+
+    }
+    
+    getCreditor() : Observable<CredtiorGetModel[]> {
+        return this.httpClient.get<CredtiorGetModel[]>(this.apiUrl);
     }  
 }

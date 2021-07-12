@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CategoryCreateComponent } from './category/category-create.component';
 import { CreditorCreateComponent } from './creditor/creditor-create.component';
 import { CreditorListComponent } from './creditor/creditor-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CreditorListComponent } from './creditor/creditor-list.component';
     CreditorListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
