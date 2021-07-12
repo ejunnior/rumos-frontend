@@ -1,0 +1,24 @@
+<h1>{{pageTitle}}</h1> <!--  Titulo -->
+<p><!--  Pula linha -->
+    <a> <!--  Ancora / Link -->
+        Create New
+    </a>
+</p>
+<table *ngIf='creditors.length'> <!-- Escrever uma tabela -->
+    <thead> <!--Cabecalho da tabela -->
+        <tr> <!--  Linha da tabela -->
+            <th>Name</th> <!--  Colunas do cabecalho da tabela -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody> <!--  Dados da tabela / body -->
+        <tr *ngFor="let creditor of creditors"> <!--  Linha -->
+            <td>{{creditor.name}}</td> <!--  Coluna -->
+            <td>
+                <a>Edit |</a>
+                <a>Detail |</a>
+                <a>Delete |</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
