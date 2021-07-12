@@ -9,7 +9,7 @@ import { CredtiorGetModel } from "./creditor-get.model";
 
 export class CreditorService {
     
-    private apiUrl = "https://localhost:44384/creditor"
+    private apiUrl = "https://localhost:44384/creditor";
     
     constructor(private httpClient: HttpClient) {
 
