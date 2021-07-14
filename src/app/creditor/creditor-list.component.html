@@ -1,6 +1,6 @@
 <h1>{{pageTitle}}</h1> <!--  Titulo -->
 <p><!--  Pula linha -->
-    <a [routerLink]="['create']"> <!--  Ancora / Link -->
+    <a  [routerLink]="['create']"> <!--  Ancora / Link -->
         Create New
     </a>
 </p>
@@ -15,9 +15,15 @@
         <tr *ngFor="let creditor of creditors"> <!--  Linha -->
             <td>{{creditor.name}}</td> <!--  Coluna -->
             <td>
-                <a>Edit |</a>
-                <a>Detail |</a>
-                <a>Delete |</a>
+                <a [routerLink]="['edit', creditor.id]">
+                    Edit |
+                </a>
+                <a [routerLink]="['detail', creditor.id]">
+                    Detail |
+                </a>
+                <a [routerLink]="['delete', creditor.id]">
+                    Delete |
+                </a>
             </td>
         </tr>
     </tbody>
