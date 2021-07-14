@@ -2,14 +2,23 @@
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
       <a class="navbar-brand">Finance Manager</a>
-      <button class="navbar-toggler" type="button">
-
-      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item">
+            <a 
+              class="nav-link text-dark"
+              routerLink="creditor">Creditor</a>
+          </li>        
+          <li class="nav-item">
+            <a class="nav-link text-dark">Category</a>
+          </li>        
+        </ul>      
+      </div>
     </div>
   </nav>
 </header>
 <div class="container">
   <main role="main" class="pb-3">
-    <fm-creditor-list></fm-creditor-list>
+    <router-outlet></router-outlet>    
   </main>
 </div>

@@ -3,7 +3,6 @@ import { CreditorGetModel } from "./creditor-get.model";
 import { CreditorService } from "./creditor.service";
 
 @Component({
-    selector:'fm-creditor-list',
     templateUrl:'./creditor-list.component.html'
 })
 

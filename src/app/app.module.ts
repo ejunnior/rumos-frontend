@@ -6,6 +6,7 @@ import { CategoryCreateComponent } from './category/category-create.component';
 import { CreditorCreateComponent } from './creditor/creditor-create.component';
 import { CreditorListComponent } from './creditor/creditor-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'creditor', component: CreditorListComponent },
+      { path: 'creditor/create', component: CreditorCreateComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
