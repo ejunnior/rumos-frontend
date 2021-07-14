@@ -1,4 +1,4 @@
-export interface CredtiorGetModel {
+export interface CreditorGetModel {
     id: number;
     name: string;    
 }

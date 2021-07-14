@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'fm-creditorcreate',
+    selector: 'fm-creditor-create',
     templateUrl: './creditor-create.component.html'
 })
 

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { CredtiorGetModel } from "./creditor-get.model";
+import { CreditorGetModel } from "./creditor-get.model";
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +15,7 @@ export class CreditorService {
 
     }
     
-    getCreditor() : Observable<CredtiorGetModel[]> {
-        return this.httpClient.get<CredtiorGetModel[]>(this.apiUrl);
+    getCreditor() : Observable<CreditorGetModel[]> {
+        return this.httpClient.get<CreditorGetModel[]>(this.apiUrl);
     }  
 }
