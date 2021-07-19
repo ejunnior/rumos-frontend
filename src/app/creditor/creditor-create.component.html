@@ -1,14 +1,24 @@
 <h1>{{pageTitle}}</h1>
 <hr />
-<div>
-    <div>
-        <form>
-            <div>
-                <label>Name</label>
-                <input type="text" id="Name" />
+<div class="row">
+    <div class="col-md-4">
+        <form novalidate [formGroup]="formCreate" (ngSubmit)="create()">
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input 
+                    type="text" 
+                    id="Name" 
+                    formControlName="creditorName"
+                    class="form-control"
+                />
             </div>
-            <div>
-                <input type="submit" id="Create" value="Create" />
+            <br>
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    id="Create" 
+                    value="Create" 
+                    class="btn btn-primary" />
             </div>
         </form>        
     </div>

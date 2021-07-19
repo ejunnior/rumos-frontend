@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CreditorDeleteComponent } from './creditor/creditor-delete.component';
 import { CreditorDetailComponent } from './creditor/creditor-detail.component';
 import { CreditorEditComponent } from './creditor/creditor-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CreditorEditComponent } from './creditor/creditor-edit.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'creditor', component: CreditorListComponent },
       { path: 'creditor/create', component: CreditorCreateComponent },
