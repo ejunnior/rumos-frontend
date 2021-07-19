@@ -28,4 +28,6 @@ export class CreditorDetailComponent implements OnInit {
                 next: data => this.creditor = data
             });
     }
+
+
 }

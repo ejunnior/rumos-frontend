@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { CreditorCreateModel } from "./creditor-create.model";
+import { CreditorEditModel } from "./creditor-edit.model";
 import { CreditorGetModel } from "./creditor-get.model";
 import { CreditorGetByIdModel } from "./creditor-getbyid.model";
 
@@ -27,5 +28,9 @@ export class CreditorService {
 
     createCreditor(model : CreditorCreateModel) : Observable<CreditorCreateModel> {
         return this.httpClient.post<CreditorCreateModel>(this.apiUrl, model);
+    }
+
+    editCreditor(model: CreditorEditModel) : Observable<CreditorEditModel> {
+        return this.httpClient.put<CreditorEditModel>(this.apiUrl + '/' + model.id ,model);
     }
 }

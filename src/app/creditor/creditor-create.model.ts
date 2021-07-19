@@ -1,3 +1,3 @@
 export interface CreditorCreateModel {
-    creditorName: string;
+    name: string;
 }

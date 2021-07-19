@@ -21,7 +21,7 @@ export class CreditorCreateComponent implements OnInit {
     
     ngOnInit(): void {
         this.formCreate = this.formBuilder.group({
-            creditorName : ''            
+            name : ''            
         });
     }
 
