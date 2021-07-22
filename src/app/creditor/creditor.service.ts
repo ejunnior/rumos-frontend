@@ -33,4 +33,8 @@ export class CreditorService {
     editCreditor(model: CreditorEditModel) : Observable<CreditorEditModel> {
         return this.httpClient.put<CreditorEditModel>(this.apiUrl + '/' + model.id ,model);
     }
+
+    deleteCreditor(id: number) : Observable<any> {
+        return this.httpClient.delete<any>(this.apiUrl + '/' + id);
+    }
 }
