@@ -11,6 +11,13 @@
                     formControlName="name"
                     class="form-control"
                 />
+                <span *ngIf="formCreate.get('name')?.invalid &&
+                             formCreate.get('name')?.errors &&
+                             formCreate.get('name')?.dirty || formCreate.get('name')?.touched">
+                    <span class="text-danger">
+                        *Please enter the Creditor Name.
+                    </span>
+                </span>
             </div>
             <br>
             <div class="form-group">
@@ -18,7 +25,8 @@
                     type="submit" 
                     id="Create" 
                     value="Create" 
-                    class="btn btn-primary" />
+                    class="btn btn-primary" 
+                    [disabled] ="!formCreate.valid"/>
             </div>
         </form>        
     </div>

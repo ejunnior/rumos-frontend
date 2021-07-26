@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { CreditorCreateModel } from "./creditor-create.model";
 import { CreditorService } from "./creditor.service";
@@ -21,17 +21,26 @@ export class CreditorCreateComponent implements OnInit {
     
     ngOnInit(): void {
         this.formCreate = this.formBuilder.group({
-            name : ''            
+            name : [
+                '',
+                [
+                    Validators.required,
+                    Validators.minLength(3),
+                    Validators.maxLength(80)
+                ]
+            ]
         });
     }
 
     create() {
-        this.model = { ...this.model, ...this.formCreate.value};
+        if(this.formCreate.valid) {
+            this.model = { ...this.model, ...this.formCreate.value};
         
-        this.creditorService.createCreditor(this.model)
-            .subscribe({
-                next: () => this.onCreateComplete()
-            })
+            this.creditorService.createCreditor(this.model)
+                .subscribe({
+                    next: () => this.onCreateComplete()
+                })
+        }
      }
 
      onCreateComplete() {
