@@ -8,6 +8,11 @@ import { BrowserModule } from "@angular/platform-browser";
         BrowserModule,
         HttpClientModule,
         ReactiveFormsModule
+    ],
+    exports: [
+        BrowserModule,
+        HttpClientModule,
+        ReactiveFormsModule
     ]
 })
 export class CoreModule { }

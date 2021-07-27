@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CreditorModule } from './creditor/creditor.module';
+import { CategoryModule } from './category/category.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreditorModule } from './creditor/creditor.module';
   ],
   imports: [
     AppRoutingModule,
-    CreditorModule
+    CreditorModule,
+    CategoryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
