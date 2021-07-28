@@ -4,27 +4,15 @@
     <div class="col-md-4">
         <form novalidate [formGroup]="formCreate" (ngSubmit)="create()">
             <div class="form-group">
-                <label class="control-label">Category</label>
+                <label class="control-label" for="cmbCategory">Creditor</label>
                 <select
                     class="form-control"
-                    formControlName="creditorId">
+                    formControlName="creditorId"
+                >
                     <option *ngFor="let creditor of creditors" value="{{creditor.id}}">
                         {{creditor.name}}                                
                     </option>                    
                 </select>
-                <!-- <input 
-                    type="text" 
-                    id="Name" 
-                    formControlName="name"
-                    class="form-control"
-                /> -->
-                <!-- <span *ngIf="formCreate.get('name')?.invalid &&
-                             formCreate.get('name')?.errors &&
-                             formCreate.get('name')?.dirty || formCreate.get('name')?.touched">
-                    <span class="text-danger">
-                        *Please enter the Creditor Name.
-                    </span>
-                </span> -->
             </div>
             <br>
             <div class="form-group">
