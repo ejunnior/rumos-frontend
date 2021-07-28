@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CreditorModule } from './creditor/creditor.module';
 import { CategoryModule } from './category/category.module';
+import { PayableModule } from './payable/payable.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CategoryModule } from './category/category.module';
   imports: [
     AppRoutingModule,
     CreditorModule,
-    CategoryModule
+    CategoryModule,
+    PayableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

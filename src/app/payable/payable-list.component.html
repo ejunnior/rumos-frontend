@@ -1,0 +1,34 @@
+<h1>{{pageTitle}}</h1> <!--  Titulo -->
+<p><!--  Pula linha -->
+    <a  [routerLink]="['create']"> <!--  Ancora / Link -->
+        Create New
+    </a>
+</p>
+<table class="table" *ngIf='payables.length'> <!-- Escrever uma tabela -->
+    <thead> <!--Cabecalho da tabela -->
+        <tr> <!--  Linha da tabela -->
+            <th>Description</th> <!--  Colunas do cabecalho da tabela -->
+            <th>Document Date</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody> <!--  Dados da tabela / body -->
+        <tr *ngFor="let payable of payables"> <!--  Linha -->
+            <td>{{payable.description}}</td> <!--  Coluna -->
+            <td>{{payable.documentDate | dateFormatPipe }}</td> 
+            <td>{{payable.amount}}</td> 
+            <td>
+                <a [routerLink]="['edit', payable.id]">
+                    Edit |
+                </a>
+                <a [routerLink]="['detail', payable.id]">
+                    Detail |
+                </a>
+                <a [routerLink]="['delete', payable.id]">
+                    Delete |
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
