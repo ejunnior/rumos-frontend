@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CreditorModule } from './creditor/creditor.module';
 import { CategoryModule } from './category/category.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    CommonModule,
     AppRoutingModule,
     CreditorModule,
     CategoryModule

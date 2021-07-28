@@ -1,5 +1,7 @@
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthorizationInterceptor } from "./authentication/authorization.interceptor";
 
 const routes : Routes = []
 
@@ -9,6 +11,11 @@ const routes : Routes = []
     ],
     exports: [
         RouterModule
-    ]
+    ],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthorizationInterceptor,
+        multi: true
+      }],
 })
 export class AppRoutingModule { }
