@@ -18,9 +18,8 @@ export class CreditorListComponent implements OnInit {
         this.creditorService
             .getCreditor()
             .subscribe( {
-                next: data => this.creditors = data
+                next: data => this.creditors = data.result
             });
             
-      //this.creditors = this.creditorService.getCreditor();  
     }
 }

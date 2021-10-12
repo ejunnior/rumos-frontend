@@ -18,7 +18,7 @@ export class PayableListComponent implements OnInit {
         this.payableService
             .getPayable()
             .subscribe( {
-                next: data => this.payables = data
+                next: data => this.payables = data.result
             });
     }
 }

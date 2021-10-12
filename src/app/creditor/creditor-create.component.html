@@ -7,26 +7,26 @@
                 <label class="control-label">Name</label>
                 <input 
                     type="text" 
-                    id="Name" 
+                    id="name" 
                     formControlName="name"
                     class="form-control"
                 />
-                <span *ngIf="formCreate.get('name')?.invalid &&
+                <!-- <span *ngIf="formCreate.get('name')?.invalid &&
                              formCreate.get('name')?.errors &&
                              formCreate.get('name')?.dirty || formCreate.get('name')?.touched">
                     <span class="text-danger">
                         *Please enter the Creditor Name.
                     </span>
-                </span>
+                </span> [disabled] ="!formCreate.valid" -->
             </div>
             <br>
             <div class="form-group">
                 <input 
                     type="submit" 
-                    id="Create" 
+                    id="create" 
                     value="Create" 
                     class="btn btn-primary" 
-                    [disabled] ="!formCreate.valid"/>
+                    /> 
             </div>
         </form>        
     </div>

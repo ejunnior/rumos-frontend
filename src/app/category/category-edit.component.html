@@ -1,0 +1,28 @@
+<h1>{{pageTitle}}</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form novalidate [formGroup]="formEdit" (ngSubmit)="edit()">
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input 
+                    type="text" 
+                    id="Name" 
+                    formControlName="categoryName"
+                    class="form-control"
+                />
+            </div>
+            <br>
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    id="Edit" 
+                    value="Edit" 
+                    class="btn btn-primary" />
+            </div>
+        </form>        
+    </div>
+</div>
+<div>
+    <a [routerLink]="['/category']">Back to List</a>    
+</div>

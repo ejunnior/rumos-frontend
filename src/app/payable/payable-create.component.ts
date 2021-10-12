@@ -36,19 +36,18 @@ export class PayableCreateComponent implements OnInit {
         this.creditorService
             .getCreditor()
             .subscribe({
-                next: data => { this.creditors = data }                
+                next: data => { this.creditors = data.result }                
             });
     }
 
     create() {
         if(this.formCreate.valid) {
-            console.log(this.formCreate.value);
-            // this.model = { ...this.model, ...this.formCreate.value};
+            this.model = { ...this.model, ...this.formCreate.value};
         
-            // this.payableService.createPayable(this.model)
-            //     .subscribe({
-            //         next: () => this.onCreateComplete()
-            //     })
+            this.payableService.createPayable(this.model)
+                .subscribe({
+                    next: () => this.onCreateComplete()
+                })
         }
      }
 

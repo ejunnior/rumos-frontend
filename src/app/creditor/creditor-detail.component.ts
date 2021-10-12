@@ -25,7 +25,7 @@ export class CreditorDetailComponent implements OnInit {
         this.creditorService
             .getCreditorById(this.creditorId)
             .subscribe({
-                next: data => this.creditor = data
+                next: data => this.creditor = data.result
             });
     }
 

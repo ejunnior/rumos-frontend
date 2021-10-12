@@ -4,7 +4,7 @@
         Create New
     </a>
 </p>
-<table class="table" *ngIf='creditors.length'> <!-- Escrever uma tabela -->
+<table class="table" *ngIf='categories.length'> <!-- Escrever uma tabela -->
     <thead> <!--Cabecalho da tabela -->
         <tr> <!--  Linha da tabela -->
             <th>Name</th> <!--  Colunas do cabecalho da tabela -->
@@ -12,16 +12,16 @@
         </tr>
     </thead>
     <tbody> <!--  Dados da tabela / body -->
-        <tr *ngFor="let creditor of creditors"> <!--  Linha -->
-            <td>{{creditor.name}}</td> <!--  Coluna -->
+        <tr *ngFor="let category of categories"> <!--  Linha -->
+            <td>{{category.name}}</td> <!--  Coluna -->
             <td>
-                <a [routerLink]="['edit', creditor.id]">
+                <a [routerLink]="['edit', category.id]">
                     Edit |
                 </a>
-                <a [routerLink]="['detail', creditor.id]">
+                <a [routerLink]="['detail', category.id]">
                     Detail |
                 </a>
-                <a [routerLink]="['delete', creditor.id]">
+                <a [routerLink]="['delete', category.id]">
                     Delete |
                 </a>
             </td>

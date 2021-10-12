@@ -1,18 +1,36 @@
 <h1>{{pageTitle}}</h1>
 <hr />
-<div>
-    <div>
-        <form>
-            <div>
-                <label>Name</label>
-                <input type="text" id="Name" />
+<div class="row">
+    <div class="col-md-4">
+        <form novalidate [formGroup]="formCreate" (ngSubmit)="create()">
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    formControlName="categoryName"
+                    class="form-control"
+                />
+                <!-- <span *ngIf="formCreate.get('name')?.invalid &&
+                             formCreate.get('name')?.errors &&
+                             formCreate.get('name')?.dirty || formCreate.get('name')?.touched">
+                    <span class="text-danger">
+                        *Please enter the Creditor Name.
+                    </span>
+                </span> [disabled] ="!formCreate.valid" -->
             </div>
-            <div>
-                <input type="submit" id="Create" value="Create" />
+            <br>
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    id="create" 
+                    value="Create" 
+                    class="btn btn-primary" 
+                    /> 
             </div>
         </form>        
     </div>
 </div>
 <div>
-    <a>Back to List</a>    
+    <a [routerLink]="['/category']">Back to List</a>    
 </div>

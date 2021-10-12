@@ -34,7 +34,7 @@ export class CreditorEditComponent {
         this.creditorService
             .getCreditorById(this.creditorId)
             .subscribe({
-                next: data => this.displayData(data)
+                next: data => this.displayData(data.result)
             });
     }    
 

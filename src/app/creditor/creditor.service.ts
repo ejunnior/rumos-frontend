@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Envelope } from "../core/envelope";
 import { CreditorCreateModel } from "./creditor-create.model";
 import { CreditorEditModel } from "./creditor-edit.model";
 import { CreditorGetModel } from "./creditor-get.model";
@@ -12,18 +13,18 @@ import { CreditorGetByIdModel } from "./creditor-getbyid.model";
 
 export class CreditorService {
     
-    private apiUrl = "https://localhost:44384/creditor";
+    private apiUrl = "https://localhost:44384/api/v1/creditor";
     
     constructor(private httpClient: HttpClient) {
 
     }
     
-    getCreditor() : Observable<CreditorGetModel[]> {
-        return this.httpClient.get<CreditorGetModel[]>(this.apiUrl);
+    getCreditor() : Observable<Envelope<CreditorGetModel[]>> {
+        return this.httpClient.get<Envelope<CreditorGetModel[]>>(this.apiUrl);
     }  
 
-    getCreditorById(id: number) : Observable<CreditorGetByIdModel> {
-        return this.httpClient.get<CreditorGetByIdModel>(this.apiUrl + '/' + id);
+    getCreditorById(id: number) : Observable<Envelope<CreditorGetByIdModel>> {
+        return this.httpClient.get<Envelope<CreditorGetByIdModel>>(this.apiUrl + '/' + id);
     }
 
     createCreditor(model : CreditorCreateModel) : Observable<CreditorCreateModel> {

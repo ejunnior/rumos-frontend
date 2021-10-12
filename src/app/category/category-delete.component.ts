@@ -1,22 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { CreditorGetByIdModel } from "./creditor-getbyid.model";
-import { CreditorService } from "./creditor.service";
+import { CategoryGetByIdModel } from "./category-getbyid.model";
+import { CategoryService } from "./category.service";
 
 @Component({
-    templateUrl: './creditor-delete.component.html'
+    templateUrl: './category-delete.component.html'
 })
 
-export class CreditorDeleteComponent implements OnInit {
-    pageTitle: string = "Delete Creditor";
-    creditorId !: number;
-    creditor !: CreditorGetByIdModel;
+export class CategoryDeleteComponent implements OnInit {
+    pageTitle: string = "Delete Category";
+    categoryId !: number;
+    category !: CategoryGetByIdModel;
     formDelete !: FormGroup;
 
     constructor(
         private route: ActivatedRoute,
-        private creditorService: CreditorService,
+        private categoryService: CategoryService,
         private router: Router,
         private formBuilder: FormBuilder) {
 
@@ -26,24 +26,24 @@ export class CreditorDeleteComponent implements OnInit {
         this.formDelete = this
             .formBuilder.group({});        
 
-        this.creditorId = Number(this.route
+        this.categoryId = Number(this.route
             .snapshot.paramMap.get('id')); 
         
-        this.creditorService
-            .getCreditorById(this.creditorId)
+        this.categoryService
+            .getCategoryById(this.categoryId)
             .subscribe({
-                next: data => this.creditor = data.result
+                next: data => this.category = data.result
             });
     }
 
     delete(): void {
-        this.creditorService.deleteCreditor(this.creditorId)
+        this.categoryService.deleteCategory(this.categoryId)
             .subscribe({
                 next: () => this.onDeleteCompleted()                
             });
     }
 
     onDeleteCompleted() : void {
-        this.router.navigate(['/creditor']);
+        this.router.navigate(['/category']);
     }
 }
